@@ -11,9 +11,14 @@ namespace CrossSolar.Models
         [RegularExpression(@"^\d+(\.\d{6})$")]
         public double Latitude { get; set; }
 
-        [Range(-180, 180)] public double Longitude { get; set; }
+        [Range(-180, 180)]
+        [Required]
+        [RegularExpression(@"^\d+(\.\d{6})$")]
+        public double Longitude { get; set; }
 
-        [Required] public string Serial { get; set; }
+        [Required]
+        [MaxLength(16)]
+        public string Serial { get; set; }
 
         public string Brand { get; set; }
     }
